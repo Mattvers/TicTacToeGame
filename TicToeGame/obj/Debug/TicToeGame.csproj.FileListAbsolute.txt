@@ -1,0 +1,9 @@
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\bin\Debug\TicToeGame.exe.config
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\bin\Debug\TicToeGame.exe
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\bin\Debug\TicToeGame.pdb
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.csprojResolveAssemblyReference.cache
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.Form1.resources
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.Properties.Resources.resources
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.csproj.GenerateResource.Cache
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.exe
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.pdb
