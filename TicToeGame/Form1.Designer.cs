@@ -70,7 +70,7 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
@@ -105,6 +105,8 @@
             this.buttonA1.TabIndex = 1;
             this.buttonA1.UseVisualStyleBackColor = true;
             this.buttonA1.Click += new System.EventHandler(this.button_Click);
+            this.buttonA1.MouseEnter += new System.EventHandler(this.button_Enter);
+            this.buttonA1.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
             // buttonA2
             // 
@@ -115,6 +117,8 @@
             this.buttonA2.TabIndex = 2;
             this.buttonA2.UseVisualStyleBackColor = true;
             this.buttonA2.Click += new System.EventHandler(this.button_Click);
+            this.buttonA2.MouseEnter += new System.EventHandler(this.button_Enter);
+            this.buttonA2.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
             // buttonA3
             // 
@@ -125,6 +129,8 @@
             this.buttonA3.TabIndex = 3;
             this.buttonA3.UseVisualStyleBackColor = true;
             this.buttonA3.Click += new System.EventHandler(this.button_Click);
+            this.buttonA3.MouseEnter += new System.EventHandler(this.button_Enter);
+            this.buttonA3.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
             // buttonB3
             // 
@@ -135,6 +141,8 @@
             this.buttonB3.TabIndex = 6;
             this.buttonB3.UseVisualStyleBackColor = true;
             this.buttonB3.Click += new System.EventHandler(this.button_Click);
+            this.buttonB3.MouseEnter += new System.EventHandler(this.button_Enter);
+            this.buttonB3.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
             // buttonB2
             // 
@@ -145,6 +153,8 @@
             this.buttonB2.TabIndex = 5;
             this.buttonB2.UseVisualStyleBackColor = true;
             this.buttonB2.Click += new System.EventHandler(this.button_Click);
+            this.buttonB2.MouseEnter += new System.EventHandler(this.button_Enter);
+            this.buttonB2.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
             // buttonB1
             // 
@@ -155,6 +165,8 @@
             this.buttonB1.TabIndex = 4;
             this.buttonB1.UseVisualStyleBackColor = true;
             this.buttonB1.Click += new System.EventHandler(this.button_Click);
+            this.buttonB1.MouseEnter += new System.EventHandler(this.button_Enter);
+            this.buttonB1.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
             // buttonC3
             // 
@@ -165,6 +177,8 @@
             this.buttonC3.TabIndex = 9;
             this.buttonC3.UseVisualStyleBackColor = true;
             this.buttonC3.Click += new System.EventHandler(this.button_Click);
+            this.buttonC3.MouseEnter += new System.EventHandler(this.button_Enter);
+            this.buttonC3.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
             // buttonC2
             // 
@@ -175,6 +189,8 @@
             this.buttonC2.TabIndex = 8;
             this.buttonC2.UseVisualStyleBackColor = true;
             this.buttonC2.Click += new System.EventHandler(this.button_Click);
+            this.buttonC2.MouseEnter += new System.EventHandler(this.button_Enter);
+            this.buttonC2.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
             // buttonC1
             // 
@@ -185,6 +201,8 @@
             this.buttonC1.TabIndex = 7;
             this.buttonC1.UseVisualStyleBackColor = true;
             this.buttonC1.Click += new System.EventHandler(this.button_Click);
+            this.buttonC1.MouseEnter += new System.EventHandler(this.button_Enter);
+            this.buttonC1.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
             // Form1
             // 

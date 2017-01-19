@@ -132,6 +132,25 @@ namespace TicToeGame
             { }
         }
 
-        
+        private void button_Leave(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            if (button.Enabled)
+            {               
+                    button.Text = "";
+            }
+        }
+
+        private void button_Enter(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            if (button.Enabled)
+            {
+                if (turn)
+                    button.Text = "X";
+                else
+                    button.Text = "O";
+            }
+        }
     }
 }
