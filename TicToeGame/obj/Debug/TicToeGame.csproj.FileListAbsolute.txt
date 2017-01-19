@@ -7,3 +7,4 @@ D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.
 D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.csproj.GenerateResource.Cache
 D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.exe
 D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.pdb
+D:\Programing\PROJEKTY\6. TicToeGame\TicToeGame\TicToeGame\obj\Debug\TicToeGame.Form2.resources

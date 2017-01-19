@@ -14,6 +14,7 @@ namespace TicToeGame
     {
         bool turn = false; //who's turn FALSE-X, TRUE-O.
         int draw = 0;       //how many moves in the game 0-9
+        static string player1_Name, player2_Name;  //strings to remember players names.
 
         public Form1()
         {
@@ -98,23 +99,24 @@ namespace TicToeGame
             else if ((buttonA3.Text == buttonB2.Text) && (buttonB2.Text == buttonC1.Text) && (!buttonC1.Enabled))
                 ifIsAWinner = true;
 
+            // IF checks if there is a winner of current game
             if (ifIsAWinner)
             {
                 disableButtons();
                 string whoWins = "";
                 if (turn)
                 {
-                    whoWins = "O";
+                    whoWins = player1_Name;
                     labelOwins.Text = (Int32.Parse(labelOwins.Text) + 1).ToString();
                 }
                 else
                 {
-                    whoWins = "X";
+                    whoWins = player2_Name;
                     labelXwins.Text = (Int32.Parse(labelXwins.Text) + 1).ToString();
                 }
                 MessageBox.Show("Congratulation " + whoWins + " You WON", "EasyWin");      
             }
-            else
+            else //if number of clicks = 9 there is a draw between players
             {
                 if (draw == 9)
                 {
@@ -169,6 +171,22 @@ namespace TicToeGame
             labelDraws.Text = "0";
             labelOwins.Text = "0";
             labelXwins.Text = "0";
+        }
+
+        // when Form1 is load i create a new object called form2 and shows him to user. Next i change labels text to correct name texts.
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            label3.Text = player1_Name + ":";
+            label1.Text = player2_Name + ":";
+        }
+
+        // public static function to save the names in correct strings
+        public static void setPlayerName(string n1, string n2)
+        {
+            player1_Name = n1;
+            player2_Name = n2;           
         }
     }
 }
