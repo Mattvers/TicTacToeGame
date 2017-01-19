@@ -37,17 +37,17 @@ namespace TicToeGame
         {
             turn = false;
             draw = 0;
-            try
-            {
+            
                 foreach (Control c in Controls)
                 {
-                    Button button = (Button)c;
-                    c.Enabled = true;
-                    c.Text = "";
-                }
-            }
-            catch
-            { }
+                    try
+                    { 
+                        Button button = (Button)c;
+                        c.Enabled = true;
+                        c.Text = "";
+                    }
+                    catch { }
+                }           
         }
 
         // function when you click a button thats change whos turn (X or O), adding one move, disable button and checking winner.
@@ -71,7 +71,7 @@ namespace TicToeGame
         }
 
         //function that checks if there is a winner(in vertical, horizontal and diagonal lines) and if there is a winner
-        //function disable buttons and show information about wining player or draw.
+        //function disable buttons and show information about wining player or draw, how many times everyone won.
         private void checkWinner()
         {
             bool ifIsAWinner = false;
@@ -103,15 +103,24 @@ namespace TicToeGame
                 disableButtons();
                 string whoWins = "";
                 if (turn)
+                {
                     whoWins = "O";
+                    labelOwins.Text = (Int32.Parse(labelOwins.Text) + 1).ToString();
+                }
                 else
+                {
                     whoWins = "X";
-                MessageBox.Show("Congratulation " + whoWins + " You WON", "EasyWin");
+                    labelXwins.Text = (Int32.Parse(labelXwins.Text) + 1).ToString();
+                }
+                MessageBox.Show("Congratulation " + whoWins + " You WON", "EasyWin");      
             }
             else
             {
                 if (draw == 9)
+                {
+                    labelDraws.Text = (Int32.Parse(labelDraws.Text) + 1).ToString();
                     MessageBox.Show("Draw!");
+                }
             }
             
             
@@ -119,19 +128,19 @@ namespace TicToeGame
 
         // function that disable all enabled buttons.
         private void disableButtons()
-        {
-            try
-            {
-                foreach (Control c in Controls)
+        {            
+           foreach (Control c in Controls)
+           {
+                try
                 {
                     Button button = (Button)c;
                     c.Enabled = false;
                 }
-            }
-            catch
-            { }
+                catch { }
+           }           
         }
 
+        //function thats clear text on button when you leave mouse
         private void button_Leave(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -141,6 +150,7 @@ namespace TicToeGame
             }
         }
 
+        //function that shows button text (X or Y) when you enter the mouse on button
         private void button_Enter(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -151,6 +161,14 @@ namespace TicToeGame
                 else
                     button.Text = "O";
             }
+        }
+
+        //when you click reset on menu that resets all values
+        private void resetCountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            labelDraws.Text = "0";
+            labelOwins.Text = "0";
+            labelXwins.Text = "0";
         }
     }
 }

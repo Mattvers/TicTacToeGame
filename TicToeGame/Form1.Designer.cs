@@ -43,6 +43,13 @@
             this.buttonC3 = new System.Windows.Forms.Button();
             this.buttonC2 = new System.Windows.Forms.Button();
             this.buttonC1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelXwins = new System.Windows.Forms.Label();
+            this.labelDraws = new System.Windows.Forms.Label();
+            this.labelOwins = new System.Windows.Forms.Label();
+            this.resetCountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +61,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(332, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(327, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,6 +69,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newGameToolStripMenuItem,
+            this.resetCountsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
@@ -204,12 +212,85 @@
             this.buttonC1.MouseEnter += new System.EventHandler(this.button_Enter);
             this.buttonC1.MouseLeave += new System.EventHandler(this.button_Leave);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(44, 301);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "X Wins:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(125, 301);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Draws:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(206, 301);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "O Wins:";
+            // 
+            // labelXwins
+            // 
+            this.labelXwins.AutoSize = true;
+            this.labelXwins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelXwins.Location = new System.Drawing.Point(71, 331);
+            this.labelXwins.Name = "labelXwins";
+            this.labelXwins.Size = new System.Drawing.Size(17, 18);
+            this.labelXwins.TabIndex = 13;
+            this.labelXwins.Text = "0";
+            // 
+            // labelDraws
+            // 
+            this.labelDraws.AutoSize = true;
+            this.labelDraws.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelDraws.Location = new System.Drawing.Point(148, 331);
+            this.labelDraws.Name = "labelDraws";
+            this.labelDraws.Size = new System.Drawing.Size(17, 18);
+            this.labelDraws.TabIndex = 14;
+            this.labelDraws.Text = "0";
+            // 
+            // labelOwins
+            // 
+            this.labelOwins.AutoSize = true;
+            this.labelOwins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelOwins.Location = new System.Drawing.Point(235, 331);
+            this.labelOwins.Name = "labelOwins";
+            this.labelOwins.Size = new System.Drawing.Size(17, 18);
+            this.labelOwins.TabIndex = 15;
+            this.labelOwins.Text = "0";
+            // 
+            // resetCountsToolStripMenuItem
+            // 
+            this.resetCountsToolStripMenuItem.Name = "resetCountsToolStripMenuItem";
+            this.resetCountsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.resetCountsToolStripMenuItem.Text = "Reset Counts";
+            this.resetCountsToolStripMenuItem.Click += new System.EventHandler(this.resetCountsToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(332, 303);
+            this.ClientSize = new System.Drawing.Size(327, 358);
+            this.Controls.Add(this.labelOwins);
+            this.Controls.Add(this.labelDraws);
+            this.Controls.Add(this.labelXwins);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonC3);
             this.Controls.Add(this.buttonC2);
             this.Controls.Add(this.buttonC1);
@@ -250,6 +331,13 @@
         private System.Windows.Forms.Button buttonC3;
         private System.Windows.Forms.Button buttonC2;
         private System.Windows.Forms.Button buttonC1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelXwins;
+        private System.Windows.Forms.Label labelDraws;
+        private System.Windows.Forms.Label labelOwins;
+        private System.Windows.Forms.ToolStripMenuItem resetCountsToolStripMenuItem;
     }
 }
 
