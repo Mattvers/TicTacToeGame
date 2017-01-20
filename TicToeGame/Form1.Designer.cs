@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vsCOMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetCountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +70,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newGameToolStripMenuItem,
+            this.vsCOMPToolStripMenuItem,
             this.resetCountsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -78,21 +80,28 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // 
+            // vsCOMPToolStripMenuItem
+            // 
+            this.vsCOMPToolStripMenuItem.Name = "vsCOMPToolStripMenuItem";
+            this.vsCOMPToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.vsCOMPToolStripMenuItem.Text = "Vs. COMP";
+            this.vsCOMPToolStripMenuItem.Click += new System.EventHandler(this.vsCOMPToolStripMenuItem_Click);
             // 
             // resetCountsToolStripMenuItem
             // 
             this.resetCountsToolStripMenuItem.Name = "resetCountsToolStripMenuItem";
-            this.resetCountsToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.resetCountsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.resetCountsToolStripMenuItem.Text = "Reset Counts";
             this.resetCountsToolStripMenuItem.Click += new System.EventHandler(this.resetCountsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -223,7 +232,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(44, 301);
+            this.label1.Location = new System.Drawing.Point(206, 300);
             this.label1.MaximumSize = new System.Drawing.Size(77, 22);
             this.label1.MinimumSize = new System.Drawing.Size(77, 22);
             this.label1.Name = "label1";
@@ -231,6 +240,7 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "X Wins:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextChanged += new System.EventHandler(this.label1_TextChanged);
             // 
             // label2
             // 
@@ -246,7 +256,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(208, 301);
+            this.label3.Location = new System.Drawing.Point(46, 300);
             this.label3.MaximumSize = new System.Drawing.Size(77, 22);
             this.label3.MinimumSize = new System.Drawing.Size(77, 22);
             this.label3.Name = "label3";
@@ -259,7 +269,7 @@
             // 
             this.labelXwins.AutoSize = true;
             this.labelXwins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelXwins.Location = new System.Drawing.Point(67, 331);
+            this.labelXwins.Location = new System.Drawing.Point(236, 331);
             this.labelXwins.Name = "labelXwins";
             this.labelXwins.Size = new System.Drawing.Size(17, 18);
             this.labelXwins.TabIndex = 13;
@@ -279,7 +289,7 @@
             // 
             this.labelOwins.AutoSize = true;
             this.labelOwins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelOwins.Location = new System.Drawing.Point(239, 331);
+            this.labelOwins.Location = new System.Drawing.Point(74, 331);
             this.labelOwins.Name = "labelOwins";
             this.labelOwins.Size = new System.Drawing.Size(17, 18);
             this.labelOwins.TabIndex = 15;
@@ -345,6 +355,7 @@
         private System.Windows.Forms.Label labelDraws;
         private System.Windows.Forms.Label labelOwins;
         private System.Windows.Forms.ToolStripMenuItem resetCountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vsCOMPToolStripMenuItem;
     }
 }
 

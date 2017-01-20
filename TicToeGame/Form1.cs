@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//TODO: in menu play options vs human, vs computer
+//TODO: better IO logic
 namespace TicToeGame
 {
     public partial class Form1 : Form
@@ -15,6 +17,7 @@ namespace TicToeGame
         bool turn = false; //who's turn FALSE-X, TRUE-O.
         int draw = 0;       //how many moves in the game 0-9
         static string player1_Name, player2_Name;  //strings to remember players names.
+        bool againstComputer = false;   //bool value if you play against computer
 
         public Form1()
         {
@@ -56,19 +59,172 @@ namespace TicToeGame
         {
             Button button = (Button)sender;
 
-            if (turn == true)
-            {
-                button.Text = "X";
-                turn = false;
-            }
-            else
-            {
+            if (turn == true)          
+                button.Text = "X";                        
+            else            
                 button.Text = "O";
-                turn = true;
-            }
+
+            turn = !turn;
             button.Enabled = false;
-            draw++;
-            checkWinner();           
+            draw++;         
+            checkWinner();
+
+            //check if is a computer turn  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            if ((turn) && (againstComputer))
+                computer_make_move();         
+        }
+
+        //function that computer decide to make a move
+        private void computer_make_move()
+        {
+            Button move = null;
+
+            move = win_or_block("X"); //first comp try to win a game
+            if (move == null) 
+            {
+                move = win_or_block("O"); //second comp try to block opponent
+                if (move == null)
+                {
+                    move = look_corner(); //third comp try to move own move in middle or corner places
+                    if (move == null)
+                    {
+                        move = look_space(); //fourth comp try to move everywhere empty space
+                    }
+                }
+            }   
+            if (draw<9)      
+                move.PerformClick();
+        }
+
+        // function that comp look for empty space field
+        private Button look_space()
+        {
+            Button button = null;
+            foreach(Control c in Controls)
+            {
+                button = c as Button;
+                if (button != null)
+                {
+                    if (button.Text == "")
+                        return button;
+                }
+            }
+            return null;
+        }
+
+        //function that comp watch for empty middle or corner fields
+        private Button look_corner()
+        {
+            if (buttonB2.Text == "")
+                return buttonB2;
+
+            if (buttonA1.Text == "O")
+            {
+                if (buttonA3.Text == "")
+                    return buttonA3;
+                if (buttonC1.Text == "")
+                    return buttonC1;
+                if (buttonC3.Text == "")
+                    return buttonC3;
+            }
+
+            if (buttonA3.Text == "O")
+            {
+                if (buttonA1.Text == "")
+                    return buttonA1;
+                if (buttonC1.Text == "")
+                    return buttonC1;
+                if (buttonC3.Text == "")
+                    return buttonC3;
+            }
+
+            if (buttonC1.Text == "O")
+            {
+                if (buttonA3.Text == "")
+                    return buttonA3;
+                if (buttonA1.Text == "")
+                    return buttonA1;
+                if (buttonC3.Text == "")
+                    return buttonC3;
+            }
+
+            if (buttonC3.Text == "O")
+            {
+                if (buttonA3.Text == "")
+                    return buttonA3;
+                if (buttonC1.Text == "")
+                    return buttonC1;
+                if (buttonA1.Text == "")
+                    return buttonA1;
+            }
+
+            return null;
+        }
+
+        //function that comp watch for win or block
+        private Button win_or_block(string mark)
+        {
+            //HORIZONTAL TESTS
+            if ((buttonA1.Text == mark) && (buttonA2.Text == mark) && (buttonA3.Text == ""))
+                return buttonA3;
+            if ((buttonA1.Text == mark) && (buttonA3.Text == mark) && (buttonA2.Text == ""))
+                return buttonA2;
+            if ((buttonA3.Text == mark) && (buttonA2.Text == mark) && (buttonA1.Text == ""))
+                return buttonA1;
+
+            if ((buttonB1.Text == mark) && (buttonB2.Text == mark) && (buttonB3.Text == ""))
+                return buttonB3;
+            if ((buttonB1.Text == mark) && (buttonB3.Text == mark) && (buttonB2.Text == ""))
+                return buttonB2;
+            if ((buttonB3.Text == mark) && (buttonB2.Text == mark) && (buttonB1.Text == ""))
+                return buttonB1;
+
+            if ((buttonC1.Text == mark) && (buttonC2.Text == mark) && (buttonC3.Text == ""))
+                return buttonC3;
+            if ((buttonC1.Text == mark) && (buttonC3.Text == mark) && (buttonC2.Text == ""))
+                return buttonC2;
+            if ((buttonC3.Text == mark) && (buttonC2.Text == mark) && (buttonC1.Text == ""))
+                return buttonC1;
+
+            //VERTICAL TESTS
+            if ((buttonA1.Text == mark) && (buttonB1.Text == mark) && (buttonC1.Text == ""))
+                return buttonC1;
+            if ((buttonA1.Text == mark) && (buttonC1.Text == mark) && (buttonB1.Text == ""))
+                return buttonB1;
+            if ((buttonC1.Text == mark) && (buttonB1.Text == mark) && (buttonA1.Text == ""))
+                return buttonA1;
+
+            if ((buttonA2.Text == mark) && (buttonB2.Text == mark) && (buttonC2.Text == ""))
+                return buttonC2;
+            if ((buttonA2.Text == mark) && (buttonC2.Text == mark) && (buttonB2.Text == ""))
+                return buttonB2;
+            if ((buttonC2.Text == mark) && (buttonB2.Text == mark) && (buttonA2.Text == ""))
+                return buttonA2;
+
+            if ((buttonA3.Text == mark) && (buttonB3.Text == mark) && (buttonC3.Text == ""))
+                return buttonC3;
+            if ((buttonA3.Text == mark) && (buttonC3.Text == mark) && (buttonB3.Text == ""))
+                return buttonB3;
+            if ((buttonC3.Text == mark) && (buttonB3.Text == mark) && (buttonA3.Text == ""))
+                return buttonA3;
+
+            //CROSS TESTS
+            if ((buttonA1.Text == mark) && (buttonB2.Text == mark) && (buttonC3.Text == ""))
+                return buttonC3;
+            if ((buttonA1.Text == mark) && (buttonC3.Text == mark) && (buttonB2.Text == ""))
+                return buttonB2;
+            if ((buttonC3.Text == mark) && (buttonB2.Text == mark) && (buttonA1.Text == ""))
+                return buttonA1;
+
+            if ((buttonA3.Text == mark) && (buttonB2.Text == mark) && (buttonC1.Text == ""))
+                return buttonC1;
+            if ((buttonA3.Text == mark) && (buttonC1.Text == mark) && (buttonB2.Text == ""))
+                return buttonB2;
+            if ((buttonC1.Text == mark) && (buttonB2.Text == mark) && (buttonA3.Text == ""))
+                return buttonA3;
+
+
+            return null;
         }
 
         //function that checks if there is a winner(in vertical, horizontal and diagonal lines) and if there is a winner
@@ -182,6 +338,26 @@ namespace TicToeGame
             label1.Text = player2_Name + ":";
         }
 
+        //function that change label text to computer
+        private void label1_TextChanged(object sender, EventArgs e)
+        {
+            if (label1.Text.ToUpper() == "COMP")
+            {
+                againstComputer = true;
+                MessageBox.Show("Now you play against computer");
+            }
+            else
+                againstComputer = false;        
+        }
+
+        //in menu option event change a game vs Computer
+        private void vsCOMPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            label1.Text = "COMP";
+            resetCountsToolStripMenuItem.PerformClick();
+            newGameToolStripMenuItem.PerformClick();
+        }
+          
         // public static function to save the names in correct strings
         public static void setPlayerName(string n1, string n2)
         {
